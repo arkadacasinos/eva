@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://evacasinod.github.io/sitemap.xml
+Sitemap: https://evacasino9.vercel.app/sitemap.xml
