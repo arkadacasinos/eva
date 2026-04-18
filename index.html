@@ -6,8 +6,7 @@
   <title>Eva Casino — Официальный сайт онлайн-казино Ева | Играть и зеркала</title>
   <meta name="description" content="Eva Casino официальный сайт — играйте в Ева казино онлайн. Рабочее зеркало Eva Casino, регистрация и бонусы на официальном сайте Ева Казино.">
   <meta name="keywords" content="eva casino, eva casino официальный сайт, eva casino зеркало, eva казино, ева казино, ева казино зеркало, ева казино зеркало рабочее, ева казино играть, ева казино онлайн, ева казино официальный, ева казино официальный сайт, eva casino играть, eva casino официальный">
-  <link rel="canonical" href="https://eva-casino.online">
-  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="tailwindcss.js"></script>
   <script>
     tailwind.config = {
       theme: {
@@ -70,7 +69,6 @@
 </head>
 <body class="bg-casino-900 text-gray-200 overflow-x-hidden">
 
-  <!-- Навигация -->
   <nav class="fixed top-0 left-0 right-0 z-50 bg-casino-900/90 backdrop-blur-md border-b border-white/5" role="navigation" aria-label="Основная навигация">
     <div class="max-w-6xl mx-auto px-4 h-14 flex items-center justify-between">
       <a href="#hero" class="flex items-center gap-2 group" aria-label="Eva Casino — на главную">
@@ -90,7 +88,6 @@
     </div>
   </nav>
 
-  <!-- Герой-секция -->
   <header id="hero" class="hero-bg min-h-screen flex items-center pt-14 relative">
     <div class="absolute inset-0 overflow-hidden pointer-events-none" aria-hidden="true">
       <div class="absolute top-20 left-10 w-64 h-64 bg-gold-400/5 rounded-full blur-3xl"></div>
@@ -131,7 +128,6 @@
 
   <div class="section-divider max-w-4xl mx-auto"></div>
 
-  <!-- Преимущества -->
   <section id="benefits" class="py-16 md:py-24" aria-labelledby="benefits-title">
     <div class="max-w-6xl mx-auto px-4">
       <h2 id="benefits-title" class="text-2xl md:text-3xl font-heading font-bold text-center mb-4">
@@ -189,7 +185,6 @@
 
   <div class="section-divider max-w-4xl mx-auto"></div>
 
-  <!-- Игры -->
   <section id="games" class="py-16 md:py-24" aria-labelledby="games-title">
     <div class="max-w-6xl mx-auto px-4">
       <h2 id="games-title" class="text-2xl md:text-3xl font-heading font-bold text-center mb-4">
@@ -237,7 +232,6 @@
 
   <div class="section-divider max-w-4xl mx-auto"></div>
 
-  <!-- Зеркало -->
   <section id="mirror" class="py-16 md:py-24 bg-casino-800/50" aria-labelledby="mirror-title">
     <div class="max-w-6xl mx-auto px-4">
       <div class="max-w-3xl mx-auto text-center">
@@ -303,7 +297,6 @@
 
   <div class="section-divider max-w-4xl mx-auto"></div>
 
-  <!-- Бонусы -->
   <section id="bonuses" class="py-16 md:py-24" aria-labelledby="bonuses-title">
     <div class="max-w-6xl mx-auto px-4">
       <h2 id="bonuses-title" class="text-2xl md:text-3xl font-heading font-bold text-center mb-4">
@@ -335,7 +328,6 @@
 
   <div class="section-divider max-w-4xl mx-auto"></div>
 
-  <!-- Регистрация -->
   <section id="play" class="py-16 md:py-24 bg-casino-800/50" aria-labelledby="reg-title">
     <div class="max-w-6xl mx-auto px-4">
       <div class="max-w-2xl mx-auto">
@@ -379,7 +371,6 @@
 
   <div class="section-divider max-w-4xl mx-auto"></div>
 
-  <!-- Мобильная версия -->
   <section id="mobile" class="py-16 md:py-24" aria-labelledby="mobile-title">
     <div class="max-w-6xl mx-auto px-4">
       <div class="flex flex-col md:flex-row items-center gap-8 md:gap-12">
@@ -430,7 +421,6 @@
 
   <div class="section-divider max-w-4xl mx-auto"></div>
 
-  <!-- Провайдеры -->
   <section class="py-16 md:py-20" aria-labelledby="providers-title">
     <div class="max-w-6xl mx-auto px-4">
       <h2 id="providers-title" class="text-2xl md:text-3xl font-heading font-bold text-center mb-4">
@@ -452,7 +442,6 @@
 
   <div class="section-divider max-w-4xl mx-auto"></div>
 
-  <!-- FAQ -->
   <section id="faq" class="py-16 md:py-24" aria-labelledby="faq-title">
     <div class="max-w-6xl mx-auto px-4">
       <h2 id="faq-title" class="text-2xl md:text-3xl font-heading font-bold text-center mb-10">
@@ -508,7 +497,6 @@
     </div>
   </section>
 
-  <!-- SEO-блок (скрытый визуально, но доступный роботам) -->
   <section class="py-8" aria-labelledby="seo-block-title">
     <div class="max-w-6xl mx-auto px-4">
       <h2 id="seo-block-title" class="text-xs font-medium text-gray-600 mb-3 text-center">Информация о проекте</h2>
@@ -522,7 +510,6 @@
     </div>
   </section>
 
-  <!-- Футер -->
   <footer class="border-t border-white/5 py-10" role="contentinfo">
     <div class="max-w-6xl mx-auto px-4">
       <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8 mb-8">
@@ -570,8 +557,6 @@
       </div>
     </div>
   </footer>
-
-  <!-- Мобильное CTA -->
   <div class="fixed bottom-0 left-0 right-0 z-40 md:hidden bg-casino-900/95 backdrop-blur-md border-t border-white/5 px-4 py-3 safe-area-bottom">
     <a href="#play" class="flex items-center justify-center gap-2 bg-gradient-to-r from-gold-400 to-gold-600 text-casino-900 font-bold text-sm w-full py-3 rounded-full active:scale-95 transition-transform">
       <i data-lucide="play" class="w-4 h-4"></i>
@@ -579,7 +564,7 @@
     </a>
   </div>
 
-  <script src="https://unpkg.com/lucide@latest"></script>
+  <script src="lucide.min.js"></script>
   <script>
     lucide.createIcons();
   </script>
