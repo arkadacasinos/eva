@@ -1,4 +1,2 @@
 User-agent: *
 Allow: /
-
-Sitemap: https://evacasino9.vercel.app/sitemap.xml
