@@ -8,6 +8,9 @@ import { Tournaments } from "@/components/eva/tournaments"
 import { HallOfFame } from "@/components/eva/hall-of-fame"
 import { RandomGame } from "@/components/eva/random-game"
 import { SeoBlock } from "@/components/eva/seo-block"
+import { PlatformSpecs } from "@/components/eva/platform-specs"
+import { Faq } from "@/components/eva/faq"
+import { HiddenSeo } from "@/components/eva/hidden-seo"
 import { Footer } from "@/components/eva/footer"
 import { newGames, topGames, hotGames, liveGames } from "@/lib/eva-data"
 
@@ -57,6 +60,12 @@ export default function HomePage() {
       <RandomGame />
 
       <SeoBlock />
+
+      <PlatformSpecs />
+
+      <Faq />
+
+      <HiddenSeo />
 
       <Footer />
     </AppShell>
