@@ -159,7 +159,7 @@ export default function RootLayout({
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
-       <meta name="yandex-verification" content="4fcab09e3b2921b3" />
+      <meta name="yandex-verification" content="2264dd009f73911b" />
         <script
           dangerouslySetInnerHTML={{
             __html: `
