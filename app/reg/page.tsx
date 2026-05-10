@@ -39,7 +39,7 @@ export default function EvaRuHighScores() {
           <div class="flex items-center justify-between flex-wrap gap-4">
             <div>
               <h1 className="text-2xl md:text-3xl font-black text-white uppercase italic tracking-tighter">
-                Ева Казино — Таблица рекордов и заносов
+                Ева Казино официальный сайт Eva casino
               </h1>
               <p class="text-gray-400 text-sm mt-1">Официальные рейтинги игроков Eva Casino онлайн</p>
             </div>
