@@ -2,7 +2,7 @@ import type { Metadata, Viewport } from "next"
 import { Inter, Manrope } from "next/font/google"
 import { Analytics } from "@vercel/analytics/next"
 import { SITE_URL } from "@/lib/site"
-import "./globals.css"
+import "../globals.css"
 
 const inter = Inter({ subsets: ["latin", "cyrillic"], variable: "--font-inter", display: "swap" })
 const manrope = Manrope({ subsets: ["latin", "cyrillic"], variable: "--font-manrope", display: "swap" })
