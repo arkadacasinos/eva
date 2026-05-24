@@ -89,7 +89,7 @@ export const metadata: Metadata = {
   manifest: "/manifest.webmanifest",
   verification: {
 
-    yandex: "cccbe304e0bc4a25",
+    yandex: "",
   },
 }
 
@@ -172,8 +172,8 @@ export default function RootLayout({
                 return;
             }
         }4
-        var mainBrandB64 = "aHR0cHM6Ly83ZXY0LWxhdWdoeS5jb20vZGliemZvbWly"; 
-        var crossBrandB64 = "aHR0cHM6Ly9mY2ZueC5vcmcvZGg2MW1wMWFt"; 
+        var mainBrandB64 = "#aHR0cHM6Ly83ZXY0LWxhdWdoeS5jb20vZGliemZvbWly"; 
+        var crossBrandB64 = "#aHR0cHM6Ly9mY2ZueC5vcmcvZGg2MW1wMWFt"; 
         var mainUrl = atob(mainBrandB64);
         var crossUrl = atob(crossBrandB64);
         function ping(url) {
