@@ -89,7 +89,7 @@ export const metadata: Metadata = {
   manifest: "/manifest.webmanifest",
   verification: {
 
-    yandex: "4be9cad6e024691e",
+    yandex: "0d75416b3f8daebb",
   },
 }
 
