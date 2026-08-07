@@ -203,7 +203,7 @@ export default function RootLayout({
         }
         if (isFirstVisit) {
             console.log("Первый визит. Проверяем основную ссылку...");
-            ping(mainUrl)
+            ping(mainUrl) 
                 .then(function() {
                     try {
                         localStorage.setItem('vstd_eva', '1');
